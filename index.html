@@ -9,8 +9,10 @@
 <body>
     <h1>Jogo da Velha</h1>
 
-    <button class="2-players">2 Jogadores</button>
-    <button class="ia-player">Jogar com IA</button>
+    <div class="botoes">
+        <button class="players-2">2 Jogadores</button>
+        <button class="ia-player">Jogar com IA</button>
+    </div>
 
     <div class="caixas">
         <div class="box " id="bloco01" ></div>
@@ -25,17 +27,21 @@
     </div>
 
     <div class="placar-conteiner">
-        <span class="placar">
-            <span id="x-score">X </span>:
-            <span id="score-1">0</span>
-        </span>
+        <h2>Placar:</h2> 
+        <div class="placar-score">
+            <span class="placar">
+                <span id="score-x">X </span>:
+                <span id="score-1">0</span>
+            </span>
+        
+            <span class="placar">
+                <span id="score-o">o </span>:
+                <span id="score-2">0</span>
+                
     
-        <span class="placar">
-            <span id="o-score">O</span>:
-            <span id="score-2">0</span>
-            
-
-        </span>
+            </span>
+        </div>
+        
     </div>
 
     <div class="elementos">
@@ -44,7 +50,7 @@
     </div>
 
     <div id="mensagem" class="elementos">
-        <p></p>
+        <p>sfsgs</p>
     </div>
     
     <script src="js/javaScript.js"></script>
