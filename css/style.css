@@ -23,6 +23,9 @@ button.players-2, button.ia-player{
 
 
 }
+.hide{
+    display: none !important;
+}
 .box{
     width: 100px;
     height: 100px;
@@ -82,5 +85,4 @@ button.players-2, button.ia-player{
     width: 500px;
     top: 150px;
     padding: 35px;
-    display: none;
 }

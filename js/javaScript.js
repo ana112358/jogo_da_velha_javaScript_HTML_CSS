@@ -2,6 +2,7 @@ let x = document.querySelector(".x")
 let o = document.querySelector(".o")
 let caixas = document.querySelectorAll(".box")
 let mensagem = document.querySelector("#mensagem p") 
+let mensagemConteiner = document.querySelector('#mensagem')
 let segundoJogador;
 
 let player1 = 0;
@@ -60,12 +61,12 @@ if(caixa01.childNodes.length >0 && caixa02.childNodes.length >0 && caixa03.child
     let b2 = caixa02.childNodes[0].className;
     let b3 = caixa03.childNodes[0].className;
      
-    console.log(b1);
+   
     if (b1 == 'x' && b2=='x' && b3=='x') {
         //O x venceu
-        console.log("O x venceeuuu");
+        declararVencedor('x');
     }else if (b1=='o'  && b2=='o' && b3=='o') {
-        console.log("O o venceeuuu");
+        declararVencedor('o');
     }
 }
 
@@ -74,12 +75,11 @@ if(caixa04.childNodes.length >0 && caixa05.childNodes.length >0 && caixa06.child
     let b2 = caixa05.childNodes[0].className;
     let b3 = caixa06.childNodes[0].className;
      
-    console.log(b1);
     if (b1 == 'x' && b2=='x' && b3=='x') {
         //O x venceu
-        console.log("O x venceeuuu");
+        declararVencedor('x');
     }else if (b1=='o'  && b2=='o' && b3=='o') {
-        console.log("O o venceeuuu");
+        declararVencedor('o');
     }
 }
 
@@ -88,12 +88,12 @@ if(caixa07.childNodes.length >0 && caixa08.childNodes.length >0 && caixa09.child
     let b2 = caixa08.childNodes[0].className;
     let b3 = caixa09.childNodes[0].className;
      
-    console.log(b1);
+    
     if (b1 == 'x' && b2=='x' && b3=='x') {
         //O x venceu
-        console.log("O x venceeuuu");
+        declararVencedor('x');
     }else if (b1=='o'  && b2=='o' && b3=='o') {
-        console.log("O o venceeuuu");
+        declararVencedor('o');
     }
 }
 
@@ -103,12 +103,11 @@ if(caixa01.childNodes.length >0 && caixa04.childNodes.length >0 && caixa07.child
     let b2 = caixa04.childNodes[0].className;
     let b3 = caixa07.childNodes[0].className;
      
-    console.log(b1);
     if (b1 == 'x' && b2=='x' && b3=='x') {
         //O x venceu
-        console.log("O x venceeuuu");
+        declararVencedor('x');
     }else if (b1=='o'  && b2=='o' && b3=='o') {
-        console.log("O o venceeuuu");
+        declararVencedor('o');
     }
 }
 
@@ -117,12 +116,11 @@ if(caixa02.childNodes.length >0 && caixa05.childNodes.length >0 && caixa08.child
     let b2 = caixa05.childNodes[0].className;
     let b3 = caixa08.childNodes[0].className;
      
-    console.log(b1);
     if (b1 == 'x' && b2=='x' && b3=='x') {
         //O x venceu
-        console.log("O x venceeuuu");
+        declararVencedor('x');
     }else if (b1=='o'  && b2=='o' && b3=='o') {
-        console.log("O o venceeuuu");
+        declararVencedor('o');
     }
 }
 
@@ -131,18 +129,86 @@ if(caixa03.childNodes.length >0 && caixa06.childNodes.length >0 && caixa09.child
     let b2 = caixa06.childNodes[0].className;
     let b3 = caixa09.childNodes[0].className;
      
-    console.log(b1);
     if (b1 == 'x' && b2=='x' && b3=='x') {
         //O x venceu
-        console.log("O x venceeuuu");
+        declararVencedor('x');
     }else if (b1=='o'  && b2=='o' && b3=='o') {
-        console.log("O o venceeuuu");
+        declararVencedor('o');
     }
 }
 
 //Diagonal
-
+if(caixa01.childNodes.length >0 && caixa05.childNodes.length >0 && caixa09.childNodes.length >0){
+    let b1 = caixa01.childNodes[0].className;
+    let b2 = caixa05.childNodes[0].className;
+    let b3 = caixa09.childNodes[0].className;
+     
+    if (b1 == 'x' && b2=='x' && b3=='x') {
+        //O x venceu
+        declararVencedor('x');
+    }else if (b1=='o'  && b2=='o' && b3=='o') {
+        declararVencedor('o');
+    }
+}
+if(caixa03.childNodes.length >0 && caixa05.childNodes.length >0 && caixa07.childNodes.length >0){
+    let b1 = caixa03.childNodes[0].className;
+    let b2 = caixa05.childNodes[0].className;
+    let b3 = caixa07.childNodes[0].className;
+     
+    if (b1 == 'x' && b2=='x' && b3=='x') {
+        //O x venceu
+        declararVencedor('x');
+    }else if (b1=='o'  && b2=='o' && b3=='o') {
+        declararVencedor('o');
+    }
 }
 
+let count = 0;
+
+for (let i = 0; i < caixas.length; i++) {
+    if (caixas[i].childNodes[0]!= undefined) {
+        ++count;
+    }
+    
+}
+if (count == 9) {
+    declararVencedor("velha");
+}
+}
+
+function declararVencedor(vencedor){
+
+    let placarx = document.querySelector("#score-1");
+    let placary = document.querySelector("#score-2");
+    let mensagemVitoria = '';
+
+    if (vencedor == 'x'){
+        mensagemVitoria = 'Parabéns o X venceu!!!';
+        placarx.textContent = parseInt(placarx.textContent)+1;
+    }else if(vencedor == 'o'){
+        mensagemVitoria = 'Parabéns O venceu!!!';
+        placary.textContent = parseInt(placary.textContent)+1;
+    }else if(vencedor == "velha"){
+        mensagemVitoria = 'iiihh , deu velha!';
+
+    }
+
+    mensagem.innerHTML = mensagemVitoria;
+    mensagemConteiner.classList.remove("hide");
+
+    setTimeout(function(){
+        mensagemConteiner.classList.add("hide");
+    },3000)
+    player1 = 0;
+    player2=0;
+
+    let caixasRemover = document.querySelectorAll(".box div");
+
+    for (let i = 0; i < caixasRemover.length; i++) {
+        caixasRemover[i].parentNode.removeChild(caixasRemover[i]);
+        
+    }
+
+}
 
 
