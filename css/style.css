@@ -6,7 +6,7 @@ body{
 .botoes{
     padding: 5px;
 }
-button.players-2, button.ia-player{
+button#players-2, button#ia-player{
     padding:10px;
     color: black;
     border: none;

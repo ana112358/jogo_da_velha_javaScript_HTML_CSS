@@ -9,42 +9,44 @@
 <body>
     <h1>Jogo da Velha</h1>
 
-    <div class="botoes">
-        <button class="players-2">2 Jogadores</button>
-        <button class="ia-player">Jogar com o computador</button>
+    <div class="botoes-conteiner">
+        <button  id="players-2">2 Jogadores</button>
+        <button  id="ia-player">Jogar com o computador</button>
     </div>
 
-    <div class="caixas">
-        <div class="box " id="bloco01" ></div>
-        <div class="box " id="bloco02" ></div>
-        <div class="box " id="bloco03"></div>
-        <div class="box " id="bloco04"></div>
-        <div class="box " id="bloco05"></div>
-        <div class="box " id="bloco06"></div>
-        <div class="box " id="bloco07"></div>
-        <div class="box " id="bloco08"></div>
-        <div class="box " id="bloco09"></div>
-    </div>
-
-    <div class="placar-conteiner">
-        <h2>Placar:</h2> 
-        <div class="placar-score">
-            <span class="placar">
-                <span id="score-x">X </span>:
-                <span id="score-1">0</span>
-            </span>
-        
-            <span class="placar">
-                <span id="score-o">o </span>:
-                <span id="score-2">0</span>
-                
-    
-            </span>
+    <div id="conteiner" class="hide">
+        <div class="caixas" >
+            <div class="box " id="bloco01" ></div>
+            <div class="box " id="bloco02" ></div>
+            <div class="box " id="bloco03"></div>
+            <div class="box " id="bloco04"></div>
+            <div class="box " id="bloco05"></div>
+            <div class="box " id="bloco06"></div>
+            <div class="box " id="bloco07"></div>
+            <div class="box " id="bloco08"></div>
+            <div class="box " id="bloco09"></div>
         </div>
+
+        <div class="placar-conteiner">
+            <h2>Placar:</h2> 
+            <div class="placar-score" class="hide">
+                <span class="placar">
+                    <span id="score-x">X </span>:
+                    <span id="score-1">0</span>
+                </span>
+            
+                <span class="placar" >
+                    <span id="score-o">o </span>:
+                    <span id="score-2">0</span>
+                    
         
+                </span>
+            </div>
+            
+        </div>
     </div>
 
-    <div class="elementos" class="hide">
+    <div class="hide">
         <div class="x" >x</div>
         <div class="o" >o</div>
     </div>

@@ -4,6 +4,7 @@ let caixas = document.querySelectorAll(".box")
 let mensagem = document.querySelector("#mensagem p") 
 let mensagemConteiner = document.querySelector('#mensagem')
 let segundoJogador;
+let botoes = document.querySelectorAll(".botoes-conteiner button");
 
 let player1 = 0;
 let player2 = 0;
@@ -19,8 +20,16 @@ for(let i=0 ; i<caixas.length;i++){
             let clonarEl = el.cloneNode(true);
 
               this.appendChild(clonarEl);
+
+
             if(player1 == player2){
                 player1++;
+
+                if (segundoJogador == 'ia-player') {
+                    jogarContraPC();
+                    player2++;
+                }
+
             }else{
                 player2++;
             }   
@@ -32,6 +41,21 @@ for(let i=0 ; i<caixas.length;i++){
 
 
 };
+
+for (let j = 0; j< botoes.length; j++) {
+  botoes[j].addEventListener("click", function(){
+    segundoJogador = this.getAttribute("id");
+        for (let k = 0; k <botoes.length; k++) {
+            botoes[k].style.display = 'none';  
+        }
+
+        setTimeout(function(){
+            let conteiner = document.querySelector("#conteiner");
+            conteiner.classList.remove("hide");
+        },500);
+    
+  });
+    }
 
 function checarEl(player1,player2){
     if (player1 == player2) {
@@ -211,4 +235,7 @@ function declararVencedor(vencedor){
 
 }
 
+function jogarContraPC(){
+    
+}
 
