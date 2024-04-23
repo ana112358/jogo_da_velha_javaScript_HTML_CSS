@@ -236,6 +236,30 @@ function declararVencedor(vencedor){
 }
 
 function jogarContraPC(){
-    
+    let clonaro = o.cloneNode(true);
+    contador = 0;
+    filled = 0;
+
+    for (let l = 0; l < caixas.length; l++) {
+        let numeroAleatorio = Math.floor(Math.random()*5);
+
+        if (caixas[l].childNodes[0] == undefined) {
+            if (numeroAleatorio <= 1) {
+            caixas[l].appendChild(clonaro)
+            contador++;
+            break;
+        }}else{
+            filled++;
+        }
+        
+    }
+    if(contador = 0 && filled<9){
+        jogarContraPC();
+
+    }
+
+
+
+
 }
 
