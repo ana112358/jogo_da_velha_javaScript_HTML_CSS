@@ -79,7 +79,7 @@ button#players-2, button#ia-player{
     margin-left: auto;
     margin-right: auto;
     left: 0;
-    right:25px;
+    right:0;
     color:white;
     font-size: 2em;
     width: 250px;
